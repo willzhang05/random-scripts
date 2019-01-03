@@ -1,5 +1,7 @@
 #!/bin/sh
-### This script was used to convert the photography I submitted as part of my art supplement to my Princeton application to meet the file constraints. ###
+### This script was used to convert the photography I submitted
+### as part of my art supplement to my Princeton application to
+### meet the file constraints.
 FILES=~/Downloads
 for f in $FILES/*.jpg
 do
