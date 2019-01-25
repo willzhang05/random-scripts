@@ -20,7 +20,9 @@ func main() {
             //const dayForm = "1/2"
             //t, _ := time.Parse(dayForm, line)
             if (subtotal.Minutes() != 0) {
-                fmt.Println(subtotal.Minutes())
+                out := subtotal.String()
+                out = out[:len(out)-2]
+                fmt.Print(out)
                 fmt.Println("\n")
             }
             fmt.Println(line)
@@ -42,5 +44,7 @@ func main() {
         }
     }
     fmt.Println("Total:")
-    fmt.Println(total.Minutes())
+    out := total.String()
+    out = out[:len(out)-2]
+    fmt.Println(out)
 }
