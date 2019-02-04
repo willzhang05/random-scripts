@@ -43,6 +43,12 @@ func main() {
             total += diff
         }
     }
+    if (subtotal.Minutes() != 0) {
+        out := subtotal.String()
+        out = out[:len(out)-2]
+        fmt.Print(out)
+        fmt.Println("\n")
+    }
     fmt.Println("Total:")
     out := total.String()
     out = out[:len(out)-2]
