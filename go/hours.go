@@ -6,6 +6,8 @@ import (
     "strings"
     "bufio"
     "time"
+    "fmt"
+    //"math"
     "encoding/csv"
 )
 
@@ -24,8 +26,9 @@ func main() {
         if (strings.ContainsAny(line, "/")) {
             records = append(records, make([]string, 2))
             if (subtotal.Minutes() != 0) {
-                out := subtotal.String()
-                out = out[:len(out)-2]
+                /*out := subtotal.String()
+                out = out[:len(out)-2]*/
+                out := fmt.Sprintf("%0.2f", subtotal.Hours())
                 records[index][1] = out
                 index++
             }
@@ -46,12 +49,19 @@ func main() {
         }
     }
     if (subtotal.Minutes() != 0) {
-        out := subtotal.String()
-        out = out[:len(out)-2]
+        /*
+        hours := math.Floor(subtotal.Hours())
+        min := math.Floor(subtotal.Minutes() - (60.0 * subtotal.Hours()))
+        fmt.Println(hours)
+        fmt.Println(min)
+        */
+        out := fmt.Sprintf("%0.2f", subtotal.Hours())
+        //out = out[:len(out)-2]
         records[index][1] = out
     }
-    out := total.String()
-    out = out[:len(out)-2]
+    out := fmt.Sprintf("%0.2f", total.Hours())
+    /*out := total.String()
+    out = out[:len(out)-2]*/
     records = append(records, []string{"Total", out})
     w.WriteAll(records)
 }
