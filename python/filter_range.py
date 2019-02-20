@@ -18,7 +18,7 @@ def main():
         print("End: " + end)
         os.chdir(sys.argv[1])
         folders = [o for o in os.listdir() if os.path.isdir(o)]
-        folders = sorted(folders,key=lambda x : re.findall(r"(\w+)",x)[0])
+        folders = sorted(folders,key=lambda x : re.findall(r"(.*?), (.*?)\(",x)[0])
         filtered = list()
         in_range = False
         for f in folders:
@@ -32,7 +32,7 @@ def main():
                     filtered.append((sid,f))
         for f in filtered:
             shutil.rmtree(f[1])
-        print(os.listdir())
+        print([o for o in os.listdir() if os.path.isdir(o)])
 
 if __name__ == "__main__":
     main()
