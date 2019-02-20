@@ -1,7 +1,7 @@
 #!/bin/bash
 ## This script connects my Thinkpad T470s to my two U2414H monitors using Displayport 1.2 chaining
 
-if [ $1 == "off" ]; then
+if [[ $1 == "off" ]]; then
     xrandr --auto
     exit
 fi
