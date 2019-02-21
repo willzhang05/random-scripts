@@ -1,6 +1,8 @@
 #!/bin/bash
+## This script is used to automatically typecheck student-submitted lean files.
+## It takes a path to the student subdirectories.
 
-if [ $# -ne 1 ]; then
+if [[ $# -ne 1 ]]; then
     echo "Please provide a path to student submissions!"
     exit;
 fi
@@ -32,7 +34,6 @@ for STUDENT in "${START_DIR}"/*/; do
         else
             echo "FAILED TYPECHECK: ${LEANFILE}"
         fi
-        
         
         #echo ${LEANFILE}
     done
