@@ -5,7 +5,7 @@
 if [[ $1 ]]; then
     if [[ $1 == *".py" ]]; then
         autopep8 $1 --in-place;
-    if [[ $1 == *".html" ]]; then
+    elif [[ $1 == *".html" ]]; then
         tidy -m -i $1;
     else
         clang-format -i -style="{BasedOnStyle: google, IndentWidth: 4, ColumnLimit: 100}" $1;
