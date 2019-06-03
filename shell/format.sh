@@ -1,9 +1,12 @@
 #!/bin/bash
-## This script prettifies python or C++ code.
+## This script prettifies HTML markup, python, or C++ code.
+## Requires autopep8, tidy, and clang to be installed.
 
 if [[ $1 ]]; then
     if [[ $1 == *".py" ]]; then
         autopep8 $1 --in-place;
+    if [[ $1 == *".html" ]]; then
+        tidy -m -i $1;
     else
         clang-format -i -style="{BasedOnStyle: google, IndentWidth: 4, ColumnLimit: 100}" $1;
     fi
