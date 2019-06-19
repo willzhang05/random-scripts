@@ -7,5 +7,5 @@ if [[ $1 == "off" ]]; then
     exit
 fi
 
-xrandr --output eDP1 --auto --pos 0x0 --output DP1-1 --crtc 0 --primary --auto --pos 1920x0 --output DP1-2 --crtc 1 --auto --pos 3840x0
+xrandr --output eDP1 --auto --pos 0x0 --output DP1-1 --crtc 1 --primary --auto --pos 1920x0 --output DP1-2 --crtc 2 --auto --pos 3840x0
 feh --bg-fill --no-xinerama ~/Pictures/odaiba.jpg
