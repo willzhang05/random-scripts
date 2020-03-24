@@ -17,7 +17,7 @@ else
             tidy -m -i $file;
             echo "Formatted $file with tidy.";
         else
-            clang-format -i -style="{BasedOnStyle: google, IndentWidth: 4, ColumnLimit: 100}" $file;
+            clang-format -i -style="{BasedOnStyle: google, IndentWidth: 4, ColumnLimit: 100, SortIncludes: false}" $file;
             echo "Formatted $file with clang-format.";
         fi
     done
